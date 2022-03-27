@@ -1,0 +1,83 @@
+{
+	"name": "@epicdesignlabs/node-bigcommerce",
+	"version": "5.0.0",
+	"description": "A revised node module for authentication and use with the BigCommerce API. Currently in active development.",
+	"main": "./lib/bigcommerce",
+	"scripts": {
+		"autotest": "supervisor -q -n exit -x node_modules/.bin/_mocha --",
+		"exectests": "nyc ./node_modules/.bin/_mocha",
+		"lint:eslint": "yarn eslint '**/*.{js,jsx,ts,tsx}' --quiet --fix --color --ignore-path .gitignore",
+		"lint:prettier": "yarn prettier '**/*.{js,jsx,ts,tsx}' --write --ignore-path .gitignore",
+		"lint": "yarn lint:eslint && yarn lint:prettier",
+		"prepare": "husky install",
+		"test": "npm run exectests && npm run lint"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/epic-design-labs/node-bigcommerce.git"
+	},
+	"keywords": [
+		"bigcommerce",
+		"oauth2.0",
+		"oauth",
+		"api",
+		"ecommerce",
+		"node",
+		"npm"
+	],
+	"author": "Epic Design Labs (https://epicdesignlabs.com)",
+	"contributors": [
+		{
+			"name": "Guy Romelle Magayano",
+			"email": "guy@epicdesignlabs.com",
+			"url": "https://guyromellemagayano.dev"
+		},
+		{
+			"name": "Rick Craig"
+		}
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/epic-design-labs/node-bigcommerce/issues"
+	},
+	"homepage": "https://github.com/epic-design-labs/node-bigcommerce",
+	"devDependencies": {
+		"agentkeepalive": "^4.2.0",
+		"chai": "^4.3.4",
+		"commitizen": "^4.2.4",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^8.6.0",
+		"husky": "^7.0.4",
+		"lint-staged": "^12.1.5",
+		"mocha": "^9.1.3",
+		"nock": "^13.2.1",
+		"nyc": "^15.1.0",
+		"prettier": "^2.5.1",
+		"sinon": "^12.0.1",
+		"supervisor": "^0.12.0"
+	},
+	"dependencies": {
+		"debug": "^4.3.3"
+	},
+	"directories": {
+		"lib": "lib",
+		"test": "test"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "yarn lint-staged",
+			"prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+			"commit": "cz"
+		}
+	},
+	"lint-staged": {
+		"**/*.{js,jsx,md,mdx,json}": [
+			"yarn lint"
+		]
+	}
+}
