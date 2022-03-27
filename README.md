@@ -7,13 +7,13 @@ A revised version of the original node module for authentication and use with th
 To install the module using NPM:
 
 ```console
-npm install @epicdesignlabs/node-bigcommerce
+npm install @epic-design-labs/node-bigcommerce
 ```
 
 Or Yarn:
 
 ```console
-yarn add @epicdesignlabs/node-bigcommerce
+yarn add @epic-design-labs/node-bigcommerce
 ```
 
 ## Setup
@@ -24,13 +24,13 @@ Include the 'node-bigcommerce' module within your script and instantiate it with
 const BigCommerce = require("node-bigcommerce");
 
 const bigCommerce = new BigCommerce({
- logLevel: "info",
- clientId: "128ecf542a35ac5270a87dc740918404",
- secret: "acbd18db4cc2f85cedef654fccc4a4d8",
- callback: "https://myapplication.com/auth",
- responseType: "json",
- headers: { "Accept-Encoding": "*" }, // Override headers (Overriding the default encoding of GZipped is useful in development)
- apiVersion: "v3", // Default is v2
+	logLevel: "info",
+	clientId: "128ecf542a35ac5270a87dc740918404",
+	secret: "acbd18db4cc2f85cedef654fccc4a4d8",
+	callback: "https://myapplication.com/auth",
+	responseType: "json",
+	headers: { "Accept-Encoding": "*" }, // Override headers (Overriding the default encoding of GZipped is useful in development)
+	apiVersion: "v3" // Default is v2
 });
 ```
 
@@ -96,21 +96,21 @@ The only configuration element required to use the `verify` method (used for bot
 
 ```javascript
 const express = require("express"),
- router = express.Router(),
- BigCommerce = require("node-bigcommerce");
+	router = express.Router(),
+	BigCommerce = require("node-bigcommerce");
 
 const bigCommerce = new BigCommerce({
- secret: "acbd18db4cc2f85cedef654fccc4a4d8",
- responseType: "json",
+	secret: "acbd18db4cc2f85cedef654fccc4a4d8",
+	responseType: "json"
 });
 
 router.get("/load", (req, res, next) => {
- try {
-  const data = bigCommerce.verify(req.query["signed_payload"]);
-  res.render("integrations/welcome", { title: "Welcome!", data: data });
- } catch (err) {
-  next(err);
- }
+	try {
+		const data = bigCommerce.verify(req.query["signed_payload"]);
+		res.render("integrations/welcome", { title: "Welcome!", data: data });
+	} catch (err) {
+		next(err);
+	}
 });
 ```
 
@@ -208,12 +208,12 @@ The 'DELETE' call requires a path: delete(path). A delete call will not return a
 const BigCommerce = require("node-bigcommerce");
 
 const bigCommerce = new BigCommerce({
- clientId: "128ecf542a35ac5270a87dc740918404",
- accessToken: "9df3b01c60df20d13843841ff0d4482c",
+	clientId: "128ecf542a35ac5270a87dc740918404",
+	accessToken: "9df3b01c60df20d13843841ff0d4482c"
 });
 
 bigCommerce.delete("/products/" + productId).then(() => {
- // Catch any errors, data will be null
+	// Catch any errors, data will be null
 });
 ```
 
@@ -233,14 +233,14 @@ You may require the Big Commerce API to return data in a specific format. To ret
 const BigCommerce = require("node-bigcommerce");
 
 const bigCommerce = new BigCommerce({
- logLevel: "info",
- clientId: "128ecf542a35ac5270a87dc740918404",
- accessToken: "9df3b01c60df20d13843841ff0d4482c",
- responseType: "xml",
+	logLevel: "info",
+	clientId: "128ecf542a35ac5270a87dc740918404",
+	accessToken: "9df3b01c60df20d13843841ff0d4482c",
+	responseType: "xml"
 });
 
 bigCommerce.post("/products?name=" + escape("Plain T-Shirt")).then((data) => {
- // Catch any errors, data will be null
+	// Catch any errors, data will be null
 });
 ```
 

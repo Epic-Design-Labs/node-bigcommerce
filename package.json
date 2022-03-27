@@ -1,5 +1,5 @@
 {
-	"name": "@epicdesignlabs/node-bigcommerce",
+	"name": "@epic-design-labs/node-bigcommerce",
 	"version": "5.0.0",
 	"description": "A revised node module for authentication and use with the BigCommerce API. Currently in active development.",
 	"main": "./lib/bigcommerce",
@@ -14,7 +14,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/epic-design-labs/node-bigcommerce.git"
+		"url": "git+https://github.com/Epic-Design-Labs/node-bigcommerce.git"
 	},
 	"keywords": [
 		"bigcommerce",
@@ -38,9 +38,9 @@
 	],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/epic-design-labs/node-bigcommerce/issues"
+		"url": "https://github.com/Epic-Design-Labs/node-bigcommerce/issues"
 	},
-	"homepage": "https://github.com/epic-design-labs/node-bigcommerce",
+	"homepage": "https://github.com/Epic-Design-Labs/node-bigcommerce",
 	"devDependencies": {
 		"agentkeepalive": "^4.2.0",
 		"chai": "^4.3.4",
@@ -79,5 +79,8 @@
 		"**/*.{js,jsx,md,mdx,json}": [
 			"yarn lint"
 		]
+	},
+	"publishConfig": {
+		"@epic-design-labs:registry": "https://npm.pkg.github.com"
 	}
 }
