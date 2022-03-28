@@ -79,5 +79,8 @@
 		"**/*.{js,jsx,md,mdx,json}": [
 			"yarn lint"
 		]
+	},
+	"publishConfig": {
+		"@epicdesignlabs:registry": "https://registry.npmjs.org"
 	}
 }
