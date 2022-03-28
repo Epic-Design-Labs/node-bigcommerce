@@ -81,6 +81,8 @@
 		]
 	},
 	"publishConfig": {
-		"@epicdesignlabs:registry": "https://registry.npmjs.org"
+		"name": "@epicdesignlabs/node-bigcommerce",
+		"access": "public",
+		"registry": "https://registry.npmjs.org/@epicdesignlabs"
 	}
 }
