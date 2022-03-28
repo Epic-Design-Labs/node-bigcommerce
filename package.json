@@ -1,6 +1,6 @@
 {
-	"name": "@epic-design-labs/node-bigcommerce",
-	"version": "5.0.0",
+	"name": "@epicdesignlabs/node-bigcommerce",
+	"version": "1.0.0",
 	"description": "A revised node module for authentication and use with the BigCommerce API. Currently in active development.",
 	"main": "./lib/bigcommerce",
 	"scripts": {
@@ -79,8 +79,5 @@
 		"**/*.{js,jsx,md,mdx,json}": [
 			"yarn lint"
 		]
-	},
-	"publishConfig": {
-		"@epic-design-labs:registry": "https://npm.pkg.github.com"
 	}
 }
