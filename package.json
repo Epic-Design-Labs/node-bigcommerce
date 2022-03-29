@@ -12,15 +12,13 @@
 		"prepare": "husky install",
 		"test": "npm run exectests && npm run lint"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Epic-Design-Labs/node-bigcommerce.git"
-	},
+	"repository": "https://github.com/Epic-Design-Labs/node-bigcommerce",
 	"keywords": [
 		"bigcommerce",
 		"oauth2.0",
 		"oauth",
 		"api",
+		"@epicdesignlabs",
 		"ecommerce",
 		"node",
 		"npm"
@@ -76,13 +74,8 @@
 		}
 	},
 	"lint-staged": {
-		"**/*.{js,jsx,md,mdx,json}": [
+		"**/*.{js,jsx}": [
 			"yarn lint"
 		]
-	},
-	"publishConfig": {
-		"name": "@epicdesignlabs/node-bigcommerce",
-		"access": "public",
-		"registry": "https://registry.npmjs.org/@epicdesignlabs"
 	}
 }
