@@ -2,28 +2,39 @@
 	"name": "@epicdesignlabs/node-bigcommerce",
 	"version": "1.0.1",
 	"description": "A revised node module for authentication and use with the BigCommerce API. Currently in active development.",
-	"main": "./lib/bigcommerce",
 	"scripts": {
 		"autotest": "supervisor -q -n exit -x node_modules/.bin/_mocha --",
+		"build": "babel src --out-dir ./ --source-maps",
 		"exectests": "nyc ./node_modules/.bin/_mocha",
+		"watch": "babel src --out-dir ./ --source-maps --watch",
 		"lint:eslint": "yarn eslint '**/*.{js,jsx,ts,tsx}' --quiet --fix --color --ignore-path .gitignore",
 		"lint:prettier": "yarn prettier '**/*.{js,jsx,ts,tsx}' --write --ignore-path .gitignore",
 		"lint": "yarn lint:eslint && yarn lint:prettier",
 		"prepare": "husky install",
 		"test": "npm run exectests && npm run lint"
 	},
-	"repository": "https://github.com/Epic-Design-Labs/node-bigcommerce",
+	"homepage": "https://github.com/Epic-Design-Labs/node-bigcommerce",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Epic-Design-Labs/node-bigcommerce.git"
+	},
 	"keywords": [
-		"bigcommerce",
-		"oauth2.0",
-		"oauth",
-		"api",
 		"@epicdesignlabs",
-		"ecommerce",
+		"api",
+		"big",
+		"bigcommerce",
+		"commerce",
+		"node-bigcommerce",
 		"node",
-		"npm"
+		"npm",
+		"oauth",
+		"oauth2.0"
 	],
-	"author": "Epic Design Labs (https://epicdesignlabs.com)",
+	"author": {
+		"name": "Epic Design Labs",
+		"url": "https://epicdesignlabs.com",
+		"email": "info@epicdesignlabs.com"
+	},
 	"contributors": [
 		{
 			"name": "Guy Romelle Magayano",
@@ -35,10 +46,10 @@
 		}
 	],
 	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/Epic-Design-Labs/node-bigcommerce/issues"
+	"main": "./lib/bigcommerce",
+	"dependencies": {
+		"debug": "^4.3.4"
 	},
-	"homepage": "https://github.com/Epic-Design-Labs/node-bigcommerce",
 	"devDependencies": {
 		"agentkeepalive": "^4.2.1",
 		"chai": "^4.3.6",
@@ -54,8 +65,8 @@
 		"sinon": "^13.0.1",
 		"supervisor": "^0.12.0"
 	},
-	"dependencies": {
-		"debug": "^4.3.4"
+	"bugs": {
+		"url": "https://github.com/Epic-Design-Labs/node-bigcommerce/issues"
 	},
 	"directories": {
 		"lib": "lib",
