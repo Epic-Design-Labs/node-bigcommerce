@@ -69,9 +69,7 @@ describe("BigCommerce", () => {
 		context("given an invalid signature", () => {
 			it("should return null", () => {
 				try {
-					bc.verify(
-						"eyJmb28iOiJmb28ifQ==.YjMzMTQ2ZGU4ZTUzNWJiOTI3NTI1ODJmNzhiZGM5NzBjNGQ3MjZkZDdkMDY1MjdkZGYxZDA0NGZjNDVjYmNkMQ=="
-					);
+					bc.verify("eyJmb28iOiJmb28ifQ==.YjMzMTQ2ZGU4ZTUzNWJiOTI3NTI1ODJmNzhiZGM5NzBjNGQ3MjZkZDdkMDY1MjdkZGYxZDA0NGZjNDVjYmNkMQ==");
 				} catch (e) {
 					e.message.should.match(/invalid/);
 					return;
@@ -95,10 +93,7 @@ describe("BigCommerce", () => {
 		});
 
 		it("should return the JSON data", () => {
-			const verify = bc.verify(
-				"eyJmb28iOiJmb28ifQ==.YjMzMTQ2ZGU4ZTUzNWJiOTI3NTI1ODJmNzhiZGM" +
-					"5NzBjNGQ3MjZkZDdkMDY1MjdkZGYxZDA0NGZjNDVjYmNkMA=="
-			);
+			const verify = bc.verify("eyJmb28iOiJmb28ifQ==.YjMzMTQ2ZGU4ZTUzNWJiOTI3NTI1ODJmNzhiZGM" + "5NzBjNGQ3MjZkZDdkMDY1MjdkZGYxZDA0NGZjNDVjYmNkMA==");
 			verify.foo.should.equal("foo");
 		});
 	});
@@ -169,9 +164,7 @@ describe("BigCommerce", () => {
 				apiVersion: "v3"
 			});
 
-			return bcV3
-				.request("get", "/themes")
-				.then(() => sinon.assert.calledWith(self.requestStub, "get", "/stores/12abc/v3/themes"));
+			return bcV3.request("get", "/themes").then(() => sinon.assert.calledWith(self.requestStub, "get", "/stores/12abc/v3/themes"));
 		});
 
 		context("when the header requirements are not met", () => {
@@ -193,9 +186,7 @@ describe("BigCommerce", () => {
 			});
 
 			it("should call the request object with extension .xml", () => {
-				return xmlBc
-					.request("get", "/foo")
-					.then(() => sinon.assert.calledWith(self.requestStub, "get", "/stores/abcd/1/v2/foo.xml"));
+				return xmlBc.request("get", "/foo").then(() => sinon.assert.calledWith(self.requestStub, "get", "/stores/abcd/1/v2/foo.xml"));
 			});
 		});
 
@@ -208,9 +199,7 @@ describe("BigCommerce", () => {
 					responseType: "json"
 				});
 
-				return jsonBc
-					.request("get", "/foo")
-					.then(() => sinon.assert.calledWith(self.requestStub, "get", "/stores/abcd/1/v2/foo"));
+				return jsonBc.request("get", "/foo").then(() => sinon.assert.calledWith(self.requestStub, "get", "/stores/abcd/1/v2/foo"));
 			});
 		});
 	});

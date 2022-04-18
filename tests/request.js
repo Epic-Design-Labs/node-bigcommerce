@@ -25,11 +25,7 @@ describe("Request", () => {
 
 	context("given a 429 status code", () => {
 		beforeEach(() => {
-			self.ordersCall = nock("https://api.bigcommerce.com")
-				.post("/orders")
-				.reply(429, {}, { "X-Retry-After": 0.1 })
-				.post("/orders")
-				.reply(200, {});
+			self.ordersCall = nock("https://api.bigcommerce.com").post("/orders").reply(429, {}, { "X-Retry-After": 0.1 }).post("/orders").reply(200, {});
 		});
 
 		it("should retry the request", () => {
@@ -97,10 +93,7 @@ describe("Request", () => {
 
 	context("given a malformed request JSON", () => {
 		beforeEach(() => {
-			nock("https://api.bigcommerce.com")
-				.defaultReplyHeaders({ "Content-Type": "application/json" })
-				.post("/orders")
-				.reply(200, "<malformed>");
+			nock("https://api.bigcommerce.com").defaultReplyHeaders({ "Content-Type": "application/json" }).post("/orders").reply(200, "<malformed>");
 		});
 
 		it("should return an error", () => {
@@ -113,14 +106,8 @@ describe("Request", () => {
 
 	context("if json is not returned", () => {
 		beforeEach(() => {
-			nock("https://api.bigcommerce.com")
-				.defaultReplyHeaders({ "Content-Type": "application/xml" })
-				.post("/orders")
-				.reply(200, "<xml></xml>");
-			nock("https://api.bigcommerce.com")
-				.defaultReplyHeaders({ "Content-Type": "application/json" })
-				.post("/customers")
-				.reply(200, "<html></html>");
+			nock("https://api.bigcommerce.com").defaultReplyHeaders({ "Content-Type": "application/xml" }).post("/orders").reply(200, "<xml></xml>");
+			nock("https://api.bigcommerce.com").defaultReplyHeaders({ "Content-Type": "application/json" }).post("/customers").reply(200, "<html></html>");
 		});
 
 		it("should return the raw response", () => {
