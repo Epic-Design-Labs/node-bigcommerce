@@ -11,7 +11,7 @@
 		"lint:prettier": "yarn prettier '**/*.js' --write --ignore-path .gitignore",
 		"lint": "yarn lint:eslint && yarn lint:prettier",
 		"prepare": "yarn husky install",
-		"test": "yarn exectests && npm lint",
+		"test": "yarn exectests && yarn lint",
 		"release": "dotenv release-it -VV --"
 	},
 	"homepage": "https://github.com/Epic-Design-Labs/node-bigcommerce/blob/master/README.md",
@@ -80,7 +80,7 @@
 	},
 	"directories": {
 		"lib": "lib",
-		"tests": "tests"
+		"test": "test"
 	},
 	"config": {
 		"commitizen": {
@@ -122,7 +122,7 @@
 		"hooks": {
 			"after:git:release": "if [ \"${isPreRelease}\" != \"true\" ]; then git tag -f latest && git push -f origin latest; fi",
 			"after:release": "echo Successfully created a release draft v${version} for ${repo.repository}. Please add release notes when necessary and publish it!",
-			"before:init": "npm test"
+			"before:init": "yarn test"
 		}
 	}
 }
