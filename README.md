@@ -2,18 +2,28 @@
 
 A revised version of the original node module for authentication and use with the BigCommerce API. Currently in active development.
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
+## Features
+
+- Support for both `v2` and `v3` BigCommerce API versions
+- Enhanced `preview` mode for testing BigCommerce webhooks. Currently supports [**Netlify**](https://www.netlify.com/), [**Vercel**](https://vercel.com/), and [**Gatsby Cloud**](https://www.gatsbyjs.com/products/cloud/)
+- Log level options for BigCommerce endpoint requests (`error`, `debug`, `info`)
+- Response type selection for Bigcommerce endpoints
+- Support for additional headers
+
 ## Installation
 
-To install the module using NPM:
+For `npm`
 
 ```console
-npm install @epic-design-labs/node-bigcommerce
+npm install @epicdesignlabs/node-bigcommerce
 ```
 
-Or Yarn:
+For `yarn`
 
 ```console
-yarn add @epic-design-labs/node-bigcommerce
+yarn add @epicdesignlabs/node-bigcommerce
 ```
 
 ## Setup
@@ -21,16 +31,16 @@ yarn add @epic-design-labs/node-bigcommerce
 Include the 'node-bigcommerce' module within your script and instantiate it with a config:
 
 ```javascript
-const BigCommerce = require("node-bigcommerce");
+const BigCommerce = require("@epicdesignlabs/node-bigcommerce");
 
 const bigCommerce = new BigCommerce({
-	logLevel: "info",
 	clientId: "128ecf542a35ac5270a87dc740918404",
 	secret: "acbd18db4cc2f85cedef654fccc4a4d8",
+	accessToken: "",
 	callback: "https://myapplication.com/auth",
 	responseType: "json",
 	headers: { "Accept-Encoding": "*" }, // Override headers (Overriding the default encoding of GZipped is useful in development)
-	apiVersion: "v3" // Default is v2
+	logLevel: "info"
 });
 ```
 
