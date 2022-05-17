@@ -50,7 +50,7 @@
 	"main": "./lib/bigcommerce",
 	"dependencies": {
 		"debug": "^3.1.0",
-		"is-ip": "^3.1.0",
+		"is-ip": "^4.0.0",
 		"jsonwebtoken": "^8.5.1"
 	},
 	"devDependencies": {
@@ -69,7 +69,7 @@
 		"eslint-plugin-prettier": "^4.0.0",
 		"husky": "^7.0.4",
 		"lint-staged": "^12.3.7",
-		"mocha": "^9.2.2",
+		"mocha": "^10.0.0",
 		"nock": "^13.2.4",
 		"nyc": "^15.1.0",
 		"prettier": "^2.6.2",
