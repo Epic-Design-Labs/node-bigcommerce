@@ -50,7 +50,7 @@
 	"main": "./lib/bigcommerce",
 	"dependencies": {
 		"debug": "^4.3.4",
-		"is-ip": "^3.1.0",
+		"is-ip": "^4.0.0",
 		"jsonwebtoken": "^8.5.1"
 	},
 	"devDependencies": {
