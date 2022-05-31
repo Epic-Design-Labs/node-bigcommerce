@@ -10,7 +10,6 @@
 		"lint": "yarn lint:eslint && yarn lint:prettier",
 		"prepare": "yarn husky install",
 		"test": "yarn exectests && yarn lint",
-		"release": "dotenv release-it -VV --",
 		"release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
 		"release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
 		"release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
@@ -72,7 +71,6 @@
 		"nock": "^13.2.4",
 		"nyc": "^15.1.0",
 		"prettier": "^2.6.2",
-		"release-it": "^15.0.0",
 		"sinon": "^14.0.0",
 		"supervisor": "^0.12.0"
 	},
