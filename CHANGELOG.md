@@ -1,3 +1,14 @@
+#### 1.0.3 (2022-06-01)
+
+##### Build System / Dependencies
+
+- uninstall `debug` package ([2389df86](https://github.com/Epic-Design-Labs/node-bigcommerce/commit/2389df86045aeff8e35ade17a274857f78bbc686))
+- remove `release-it` package ([fc30d2e0](https://github.com/Epic-Design-Labs/node-bigcommerce/commit/fc30d2e0282beb40702d826b3dab2316e91d78c9))
+
+##### Refactors
+
+- refactor main files ([52bce370](https://github.com/Epic-Design-Labs/node-bigcommerce/commit/52bce3704362f5cc2152f4f1d7318bf1b77ca6b1))
+
 #### 1.0.2 (2022-05-31)
 
 ##### Build System / Dependencies
