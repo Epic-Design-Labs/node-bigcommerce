@@ -1,6 +1,6 @@
 {
 	"name": "@epicdesignlabs/node-bigcommerce",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "A revised node module for authentication and use with the BigCommerce API. Currently in active development.",
 	"scripts": {
 		"autotest": "yarn supervisor -q -n exit -x node_modules/.bin/_mocha --",
