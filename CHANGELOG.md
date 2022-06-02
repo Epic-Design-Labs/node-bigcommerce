@@ -1,3 +1,13 @@
+#### 1.0.4 (2022-06-02)
+
+##### Build System / Dependencies
+
+- replace `winston` with `debug` and its `supports-color` complement ([7e3b5085](https://github.com/Epic-Design-Labs/node-bigcommerce/commit/7e3b508565572841640dbb2276db5ebf01c5d802))
+
+##### Bug Fixes
+
+- fix issues on main lib files ([0e978812](https://github.com/Epic-Design-Labs/node-bigcommerce/commit/0e97881202517071632474e41ee3de2893a95fcc))
+
 #### 1.0.3 (2022-06-01)
 
 ##### Build System / Dependencies
