@@ -46,9 +46,10 @@
 	"license": "MIT",
 	"main": "./lib/bigcommerce",
 	"dependencies": {
+		"debug": "^4.3.4",
 		"is-ip": "^4.0.0",
 		"jsonwebtoken": "^8.5.1",
-		"winston": "^3.7.2"
+		"supports-color": "^9.2.2"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.16.8",
